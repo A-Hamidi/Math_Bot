@@ -9,6 +9,8 @@ import logging
 from sympy import symbols, solve
 from sympy import *
 from telepot.namedtuple import InlineKeyboardMarkup, InlineKeyboardButton
+import BotTokenCode
+
 
 logging.basicConfig(filename='log.txt', filemode='w', format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
                     level=logging.INFO)
@@ -146,7 +148,7 @@ def limit(a, b, c):
     sv.t = np.linspace(a, b, c)
 
 
-bot = telepot.Bot('5009273368:AAFS7h22WwOl2pzavYS1qXJHD1BVhTEyFlk')
+bot = telepot.Bot(BotTokenCode.BOT_TOCKEN_CODE)
 
 sv = Saver()
 bot.message_loop(handle)
